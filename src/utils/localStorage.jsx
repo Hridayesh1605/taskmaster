@@ -1,7 +1,10 @@
+import { useEffect } from "react";
+
 const student = [
     {
         "studentId": "S001",
-        "studentEmail": "student1@example.com",
+        "email": "student1@example.com",
+        "password":"123",
         "tasks": [
             {
                 "active": true,
@@ -57,7 +60,8 @@ const student = [
     },
     {
         "studentId": "S002",
-        "studentEmail": "student2@example.com",
+        "email": "student2@example.com",
+        "password":"123",
         "tasks": [
             {
                 "active": true,
@@ -113,7 +117,8 @@ const student = [
     },
     {
         "studentId": "S003",
-        "studentEmail": "student3@example.com",
+        "email": "student3@example.com",
+        "password":"123",
         "tasks": [
             {
                 "active": true,
@@ -169,7 +174,8 @@ const student = [
     },
     {
         "studentId": "S004",
-        "studentEmail": "student4@example.com",
+        "email": "student4@example.com",
+        "password":"123",
         "tasks": [
             {
                 "active": true,
@@ -225,7 +231,8 @@ const student = [
     },
     {
         "studentId": "S005",
-        "studentEmail": "student5@example.com",
+        "email": "student5@example.com",
+        "password":"123",
         "tasks": [
             {
                 "active": true,
@@ -290,6 +297,7 @@ const admin = [
     }
 ];
 
+
 export const setLocalStorage=()=>{
     localStorage.setItem('student',JSON.stringify(student))
     localStorage.setItem('admin',JSON.stringify(admin))
@@ -297,8 +305,11 @@ export const setLocalStorage=()=>{
 }
 
 export const getLocalStorage=()=>{
+    
     const studentdata = JSON.parse(localStorage.getItem('student'))
     const admindata = JSON.parse(localStorage.getItem('admin'))
+    
     console.log(studentdata,admindata)
+    return {studentdata,admindata}
     
 }
