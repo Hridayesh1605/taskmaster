@@ -1,11 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { AuthContext } from '../../context/AuthProvider'
 
 
 const AllTask = () => {
+    const [userData,setUserData] = useContext(AuthContext)
+    
 
-    const AuthData = useContext(AuthContext)
-    console.log(AuthData, "alltask")
+    useEffect(() => {
+        console.log('User data has been updated:', userData);
+      }, [userData]);
+
+    
+    // console.log(AuthData, "alltask")
     return (
         <div className='bg-[1C1C1C] p-5 rounded mt-5 h-60 ' id='alltask'>
             <div className='bg-red-400 mb-2 py-2 px-4 flex justify-between'>
@@ -19,7 +25,7 @@ const AllTask = () => {
             </div>
 
             <div className='h-[80%] overflow-auto'>
-                {AuthData.studentdata.map((elem, idx) => {
+                {userData.map((elem, idx) => {
                     return <div className='border-2 border-emerald-400 mb-2 py-2 px-4 flex justify-between' key={idx}>
                         <h2 className='w-1/5'>
                             {elem.firstName}

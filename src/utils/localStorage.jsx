@@ -346,7 +346,7 @@ export const getLocalStorage=()=>{
     const studentdata = JSON.parse(localStorage.getItem('student'))
     const admindata = JSON.parse(localStorage.getItem('admin'))
     
-    console.log(studentdata,admindata)
+    // console.log(studentdata,admindata)
     return {studentdata,admindata}
     
 }

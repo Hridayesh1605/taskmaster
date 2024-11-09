@@ -9,10 +9,11 @@ import { useContext } from 'react'
 import { AuthContext } from './context/AuthProvider'
 
 const App = () => {
+  // setLocalStorage()
 
 
-  const AuthData = useContext(AuthContext)
-  console.log(AuthData)
+  const [userData,setUserData] = useContext(AuthContext)
+  // console.log(AuthData)
 
   // useEffect(()=>{
   //   setLocalStorage()
@@ -37,7 +38,7 @@ const App = () => {
       const userData = JSON.parse(loggedInUser)
       setUser(userData.role)
       setLoggedInUserData(userData.data)
-      console.log(userData,"hiii")
+      console.log(userData,"hiiidSHASVDJB")
     }
   }, [])
   const handleLogin = (email, password) => {
@@ -45,8 +46,8 @@ const App = () => {
       setUser("admin")
       localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin' }))
     }
-    else if (AuthData) {
-      const student = AuthData.studentdata.find((e) => email == e.email && e.password == password)
+    else if (userData) {
+      const student = userData.find((e) => email == e.email && e.password == password)
       if (student) {
         setUser("student")
         setLoggedInUserData(student)
@@ -63,9 +64,8 @@ const App = () => {
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ''}
-      {user == "admin" ? <AdminDashboard /> : (user == 'student' ? <StudentDashboard data={loggedInUserData}/>:null)}
-      {/* <StudentDashboard/> */}
-      {/* <AdminDashboard/> */}
+      {user == "admin" ? <AdminDashboard changeUser={setUser}/> : (user == 'student' ? <StudentDashboard changeUser={setUser} data={loggedInUserData}/>:null)}
+      
     </>
   )
 }

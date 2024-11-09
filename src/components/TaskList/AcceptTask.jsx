@@ -1,8 +1,14 @@
-import React from 'react'
+import React ,{useContext} from 'react'
+import { AuthContext } from '../../context/AuthProvider'
 
 const AcceptTask = ({data}) => {
+    const [userData,setUserData] = useContext(AuthContext)
+
+    const btnHandler = ()=>{
+        console.log("hello")
+    }
     return (
-        <div className='flex-shrink-0 h-full w-[300px] p-5 bg-red-400 rounded-xl'>
+        <div className='flex-shrink-0 h-full w-[300px] p-5 bg-green-400 rounded-xl'>
             <div className='flex justify-between items-center'>
                 <h3 className='bg-red-600 px-3 py-1 rounded text-sm'>{data.category}</h3>
                 <h4 className='text-sm'>{data.taskDate}</h4>
@@ -13,7 +19,7 @@ const AcceptTask = ({data}) => {
             <p className='text-sm mt-2'>{data.taskDescription}</p>
             <div className='flex justify-between mt-4'>
                 <button className='bg-green-600 text-white px-3 py-1 rounded'>Completed Task</button>
-                <button className='bg-red-600 text-white px-3 py-1 rounded'>Failed Task</button>
+                <button className='bg-red-600 text-white px-3 py-1 rounded' onClick={btnHandler}>Failed Task</button>
 
             </div>
 
