@@ -9,43 +9,61 @@ import { useContext } from 'react'
 import { AuthContext } from './context/AuthProvider'
 
 const App = () => {
-  
+
 
   const AuthData = useContext(AuthContext)
   console.log(AuthData)
 
   // useEffect(()=>{
-  //   // setLocalStorage()
-  //   getLocalStorage()
+  //   setLocalStorage()
+  //   // getLocalStorage()
   // },)
 
   const [user, setUser] = useState(null)
+  const [loggedInUserData, setLoggedInUserData] = useState(null)
+  // useEffect(() => {
+  //   if(AuthData){
+  //     const loggedInUser = localStorage.getItem("loggedInUser")
+  //     if(loggedInUser){
+  //       setUser(loggedInUser.role)
+  //     }
+  //   }
+
+  // }, [AuthData])
+
   useEffect(() => {
-    if(AuthData){
-      const loggedInUser = localStorage.getItem("loggedInUser")
-      if(loggedInUser){
-        setUser(loggedInUser.role)
-      }
+    const loggedInUser = localStorage.getItem("loggedInUser")
+    if (loggedInUser) {
+      const userData = JSON.parse(loggedInUser)
+      setUser(userData.role)
+      setLoggedInUserData(userData.data)
+      console.log(userData,"hiii")
     }
-    
-  }, [AuthData])
-  const handleLogin = (email,password)=>{
-    if(email=="admin@me.com"&& password=="123"){
+  }, [])
+  const handleLogin = (email, password) => {
+    if (email == "admin@me.com" && password == "123") {
       setUser("admin")
-      localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
+      localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin' }))
     }
-    else if(AuthData && AuthData.studentdata.find((e)=>email==e.email && e.password==password)){
-      setUser("student")
-      localStorage.setItem('loggedInUser',JSON.stringify({role:'student'}))
-    }else{
+    else if (AuthData) {
+      const student = AuthData.studentdata.find((e) => email == e.email && e.password == password)
+      if (student) {
+        setUser("student")
+        setLoggedInUserData(student)
+        localStorage.setItem('loggedInUser', JSON.stringify({ role: 'student',data:student }))
+
+      }
+
+    } else {
       console.log("invalid credentials")
     }
 
   }
+  console.log(loggedInUserData)
   return (
     <>
-      {!user ? <Login handleLogin={handleLogin}/>:''}
-      {user=="admin" ? <AdminDashboard/>:<StudentDashboard/>}
+      {!user ? <Login handleLogin={handleLogin} /> : ''}
+      {user == "admin" ? <AdminDashboard /> : (user == 'student' ? <StudentDashboard data={loggedInUserData}/>:null)}
       {/* <StudentDashboard/> */}
       {/* <AdminDashboard/> */}
     </>

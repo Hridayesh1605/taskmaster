@@ -2,9 +2,16 @@ import { useEffect } from "react";
 
 const student = [
     {
-        "studentId": "S001",
+        "id": "S001",
+        "firstName": "Aarav",
         "email": "student1@example.com",
-        "password":"123",
+        "password": "123",
+        "taskCount": {
+            "active": 3,
+            "newTask": 2,
+            "completed": 2,
+            "failed": 1
+        },
         "tasks": [
             {
                 "active": true,
@@ -59,9 +66,16 @@ const student = [
         ]
     },
     {
-        "studentId": "S002",
+        "id": "S002",
+        "firstName": "Ishaan",
         "email": "student2@example.com",
-        "password":"123",
+        "password": "123",
+        "taskCount": {
+            "active": 3,
+            "newTask": 2,
+            "completed": 2,
+            "failed": 1
+        },
         "tasks": [
             {
                 "active": true,
@@ -116,9 +130,16 @@ const student = [
         ]
     },
     {
-        "studentId": "S003",
+        "id": "S003",
+        "firstName": "Rhea",
         "email": "student3@example.com",
-        "password":"123",
+        "password": "123",
+        "taskCount": {
+            "active": 3,
+            "newTask": 2,
+            "completed": 2,
+            "failed": 1
+        },
         "tasks": [
             {
                 "active": true,
@@ -173,9 +194,16 @@ const student = [
         ]
     },
     {
-        "studentId": "S004",
+        "id": "S004",
+        "firstName": "Priya",
         "email": "student4@example.com",
-        "password":"123",
+        "password": "123",
+        "taskCount": {
+            "active": 3,
+            "newTask": 2,
+            "completed": 2,
+            "failed": 1
+        },
         "tasks": [
             {
                 "active": true,
@@ -230,9 +258,16 @@ const student = [
         ]
     },
     {
-        "studentId": "S005",
+        "id": "S005",
+        "firstName": "Saanvi",
         "email": "student5@example.com",
-        "password":"123",
+        "password": "123",
+        "taskCount": {
+            "active": 3,
+            "newTask": 2,
+            "completed": 2,
+            "failed": 1
+        },
         "tasks": [
             {
                 "active": true,
@@ -249,8 +284,8 @@ const student = [
                 "newTask": false,
                 "completed": true,
                 "failed": false,
-                "taskTitle": "Physics Exam Study",
-                "taskDescription": "Review the physics formulas for the upcoming exam.",
+                "taskTitle": "Physics Study Guide",
+                "taskDescription": "Review notes on thermodynamics for the upcoming quiz.",
                 "taskDate": "2024-11-14",
                 "category": "Study"
             },
@@ -259,9 +294,9 @@ const student = [
                 "newTask": false,
                 "completed": false,
                 "failed": true,
-                "taskTitle": "Chemistry Lab Report",
-                "taskDescription": "Complete and submit the lab report on chemical bonding.",
-                "taskDate": "2024-11-11",
+                "taskTitle": "Art Project",
+                "taskDescription": "Start the sketch for the final art project.",
+                "taskDate": "2024-11-10",
                 "category": "Assignment"
             },
             {
@@ -269,8 +304,8 @@ const student = [
                 "newTask": true,
                 "completed": false,
                 "failed": false,
-                "taskTitle": "English Literature Exam Prep",
-                "taskDescription": "Study the key themes in modernist literature.",
+                "taskTitle": "English Exam Review",
+                "taskDescription": "Study character analysis for the English literature exam.",
                 "taskDate": "2024-11-19",
                 "category": "Study"
             },
@@ -279,14 +314,16 @@ const student = [
                 "newTask": false,
                 "completed": true,
                 "failed": false,
-                "taskTitle": "Geography Assignment",
-                "taskDescription": "Create a presentation on climate zones.",
-                "taskDate": "2024-11-13",
+                "taskTitle": "Math Homework",
+                "taskDescription": "Complete the assigned problems on quadratic equations.",
+                "taskDate": "2024-11-12",
                 "category": "Assignment"
             }
         ]
     }
 ];
+
+
 
 
 const admin = [
