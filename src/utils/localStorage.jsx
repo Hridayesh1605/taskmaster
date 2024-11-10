@@ -7,15 +7,15 @@ const student = [
         "email": "student1@example.com",
         "password": "123",
         "taskCount": {
-            "active": 3,
-            "newTask": 2,
+            "active": 1,
+            "newTask": 1,
             "completed": 2,
             "failed": 1
         },
         "tasks": [
             {
                 "active": true,
-                "newTask": true,
+                "newTask": false,
                 "completed": false,
                 "failed": false,
                 "taskTitle": "Math Assignment",
@@ -24,7 +24,7 @@ const student = [
                 "category": "Assignment"
             },
             {
-                "active": true,
+                "active": false,
                 "newTask": false,
                 "completed": true,
                 "failed": false,
@@ -44,7 +44,7 @@ const student = [
                 "category": "Assignment"
             },
             {
-                "active": true,
+                "active": false,
                 "newTask": true,
                 "completed": false,
                 "failed": false,
@@ -71,14 +71,14 @@ const student = [
         "email": "student2@example.com",
         "password": "123",
         "taskCount": {
-            "active": 3,
-            "newTask": 2,
-            "completed": 2,
+            "active": 0,
+            "newTask": 3,
+            "completed": 1,
             "failed": 1
         },
         "tasks": [
             {
-                "active": true,
+                "active": false,
                 "newTask": true,
                 "completed": false,
                 "failed": false,
@@ -88,7 +88,7 @@ const student = [
                 "category": "Assignment"
             },
             {
-                "active": true,
+                "active": false,
                 "newTask": false,
                 "completed": true,
                 "failed": false,
@@ -108,7 +108,7 @@ const student = [
                 "category": "Assignment"
             },
             {
-                "active": true,
+                "active": false,
                 "newTask": true,
                 "completed": false,
                 "failed": false,
@@ -119,8 +119,8 @@ const student = [
             },
             {
                 "active": false,
-                "newTask": false,
-                "completed": true,
+                "newTask": true,
+                "completed": false,
                 "failed": false,
                 "taskTitle": "Literature Analysis",
                 "taskDescription": "Complete the analysis of a short story for literature class.",
@@ -135,15 +135,15 @@ const student = [
         "email": "student3@example.com",
         "password": "123",
         "taskCount": {
-            "active": 3,
-            "newTask": 2,
+            "active": 2,
+            "newTask": 0,
             "completed": 2,
             "failed": 1
         },
         "tasks": [
             {
                 "active": true,
-                "newTask": true,
+                "newTask": false,
                 "completed": false,
                 "failed": false,
                 "taskTitle": "Chemistry Assignment",
@@ -153,6 +153,16 @@ const student = [
             },
             {
                 "active": true,
+                "newTask": false,
+                "completed": false,
+                "failed": false,
+                "taskTitle": "Biology Exam Preparation",
+                "taskDescription": "Study cell structures and their functions for the biology exam.",
+                "taskDate": "2024-11-19",
+                "category": "Study"
+            },
+            {
+                "active": false,
                 "newTask": false,
                 "completed": true,
                 "failed": false,
@@ -172,16 +182,6 @@ const student = [
                 "category": "Assignment"
             },
             {
-                "active": true,
-                "newTask": true,
-                "completed": false,
-                "failed": false,
-                "taskTitle": "Biology Exam Preparation",
-                "taskDescription": "Study cell structures and their functions for the biology exam.",
-                "taskDate": "2024-11-19",
-                "category": "Study"
-            },
-            {
                 "active": false,
                 "newTask": false,
                 "completed": true,
@@ -199,14 +199,14 @@ const student = [
         "email": "student4@example.com",
         "password": "123",
         "taskCount": {
-            "active": 3,
+            "active": 0,
             "newTask": 2,
-            "completed": 2,
-            "failed": 1
+            "completed": 3,
+            "failed": 0
         },
         "tasks": [
             {
-                "active": true,
+                "active": false,
                 "newTask": true,
                 "completed": false,
                 "failed": false,
@@ -216,7 +216,7 @@ const student = [
                 "category": "Assignment"
             },
             {
-                "active": true,
+                "active": false,
                 "newTask": false,
                 "completed": true,
                 "failed": false,
@@ -228,15 +228,25 @@ const student = [
             {
                 "active": false,
                 "newTask": false,
-                "completed": false,
-                "failed": true,
+                "completed": true,
+                "failed": false,
+                "taskTitle": "History Assignment",
+                "taskDescription": "Write an outline for the project on the Roman Empire.",
+                "taskDate": "2024-11-12",
+                "category": "Assignment"
+            },
+            {
+                "active": false,
+                "newTask": false,
+                "completed": true,
+                "failed": false,
                 "taskTitle": "Philosophy Essay",
-                "taskDescription": "Start drafting the essay on existentialism.",
+                "taskDescription": "Complete the draft on existentialism.",
                 "taskDate": "2024-11-10",
                 "category": "Assignment"
             },
             {
-                "active": true,
+                "active": false,
                 "newTask": true,
                 "completed": false,
                 "failed": false,
@@ -244,16 +254,6 @@ const student = [
                 "taskDescription": "Prepare for the trigonometry test.",
                 "taskDate": "2024-11-18",
                 "category": "Study"
-            },
-            {
-                "active": false,
-                "newTask": false,
-                "completed": true,
-                "failed": false,
-                "taskTitle": "History Assignment",
-                "taskDescription": "Write an outline for the project on the Roman Empire.",
-                "taskDate": "2024-11-12",
-                "category": "Assignment"
             }
         ]
     },
@@ -263,14 +263,14 @@ const student = [
         "email": "student5@example.com",
         "password": "123",
         "taskCount": {
-            "active": 3,
-            "newTask": 2,
-            "completed": 2,
+            "active": 0,
+            "newTask": 1,
+            "completed": 3,
             "failed": 1
         },
         "tasks": [
             {
-                "active": true,
+                "active": false,
                 "newTask": true,
                 "completed": false,
                 "failed": false,
@@ -280,13 +280,23 @@ const student = [
                 "category": "Assignment"
             },
             {
-                "active": true,
+                "active": false,
                 "newTask": false,
                 "completed": true,
                 "failed": false,
-                "taskTitle": "Physics Study Guide",
-                "taskDescription": "Review notes on thermodynamics for the upcoming quiz.",
-                "taskDate": "2024-11-14",
+                "taskTitle": "Math Worksheet",
+                "taskDescription": "Complete worksheet on statistics.",
+                "taskDate": "2024-11-11",
+                "category": "Assignment"
+            },
+            {
+                "active": false,
+                "newTask": false,
+                "completed": true,
+                "failed": false,
+                "taskTitle": "Physics Reading",
+                "taskDescription": "Read chapter 5 and summarize key points for class discussion.",
+                "taskDate": "2024-11-13",
                 "category": "Study"
             },
             {
@@ -294,34 +304,25 @@ const student = [
                 "newTask": false,
                 "completed": false,
                 "failed": true,
-                "taskTitle": "Art Project",
-                "taskDescription": "Start the sketch for the final art project.",
+                "taskTitle": "Chemistry Lab Preparation",
+                "taskDescription": "Prepare for the lab on chemical reactions.",
                 "taskDate": "2024-11-10",
                 "category": "Assignment"
-            },
-            {
-                "active": true,
-                "newTask": true,
-                "completed": false,
-                "failed": false,
-                "taskTitle": "English Exam Review",
-                "taskDescription": "Study character analysis for the English literature exam.",
-                "taskDate": "2024-11-19",
-                "category": "Study"
             },
             {
                 "active": false,
                 "newTask": false,
                 "completed": true,
                 "failed": false,
-                "taskTitle": "Math Homework",
-                "taskDescription": "Complete the assigned problems on quadratic equations.",
+                "taskTitle": "Geography Project",
+                "taskDescription": "Complete research on climate change effects.",
                 "taskDate": "2024-11-12",
                 "category": "Assignment"
             }
         ]
     }
 ];
+
 
 
 
