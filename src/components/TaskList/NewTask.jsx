@@ -44,7 +44,7 @@ const NewTask = ({data,userId}) => {
 
     }
     return (
-        <div className='flex-shrink-0 h-full w-[300px] p-5 bg-red-400 rounded-xl'>
+        <div className='flex-shrink-0 h-full w-[300px] p-5 bg-blue-400 rounded-xl'>
             <div className='flex justify-between items-center'>
                 <h3 className='bg-red-600 px-3 py-1 rounded text-sm'>{data.category}</h3>
                 <h4 className='text-sm'>{data.taskDate}</h4>
